@@ -10,10 +10,11 @@
     "build": "turbo build",
     "start": "pnpm --filter @repo/api start:prod",
     "lint": "turbo lint",
-    "db:generate": "pnpm --filter @repo/database generate",
-    "db:push": "pnpm --filter @repo/database db:push"
+    "db:generate": "dotenv -e .env -- pnpm --filter @repo/database generate",
+    "db:push": "dotenv -e .env -- pnpm --filter @repo/database db:push"
   },
   "devDependencies": {
+    "dotenv-cli": "^8.0.0",
     "turbo": "^2.5.4",
     "typescript": "^5.8.3"
   }

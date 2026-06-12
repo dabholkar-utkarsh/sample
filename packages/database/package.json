@@ -6,15 +6,16 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "generate": "prisma generate",
-    "db:push": "prisma db push",
-    "studio": "prisma studio"
+    "generate": "dotenv -e ../../.env -- prisma generate",
+    "db:push": "dotenv -e ../../.env -- prisma db push",
+    "studio": "dotenv -e ../../.env -- prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^6.9.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.30",
+    "dotenv-cli": "^8.0.0",
     "prisma": "^6.9.0",
     "typescript": "^5.8.3"
   }

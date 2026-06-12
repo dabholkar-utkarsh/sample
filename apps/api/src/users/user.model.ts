@@ -8,9 +8,9 @@ export class UserModel {
   @Field()
   email!: string;
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   name?: string | null;
 
-  @Field()
+  @Field(() => Date)
   createdAt!: Date;
 }
